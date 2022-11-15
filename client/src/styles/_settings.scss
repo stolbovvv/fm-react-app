@@ -1,0 +1,31 @@
+// Breakpoints settings
+$breakpoint-list: (
+  'xxl': 1920px,
+  'xl': 1600px,
+  'lg': 1280px,
+  'md': 768px,
+  'sm': 480px,
+  'xs': 320px,
+);
+
+// Colors setting
+$clr-white: #ececec;
+$clr-black: #141e30;
+
+$clr-primary: #3762fb;
+$clr-secondary: #a866ff;
+$clr-tertiary: #fd8c35;
+$clr-success: #3bbf3b;
+$clr-warning: #f3b91b;
+$clr-danger: #f03838;
+
+$clr-text-black: #141e30;
+$clr-text-light: #ececec;
+
+// Fonts settings
+$ff-system: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+$ff-native: 'Montserrat', sans-serif;
+
+$fs-native: 16px;
+$fw-native: 400;
+$lh-native: 150%;
