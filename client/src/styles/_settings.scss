@@ -9,18 +9,22 @@ $breakpoint-list: (
 );
 
 // Colors setting
-$clr-white: #ececec;
-$clr-black: #141e30;
+$clr-text-dark: #333333; // default text
+$clr-text-ligth: #757575; // light text
 
-$clr-primary: #3762fb;
-$clr-secondary: #a866ff;
-$clr-tertiary: #fd8c35;
-$clr-success: #3bbf3b;
-$clr-warning: #f3b91b;
-$clr-danger: #f03838;
+$clr-white: #ffffff; // bg
+$clr-gray-100: #fafafa; // bg
+$clr-gray-200: #f2f2f2; // border & bg
+$clr-gray-300: #e8e8e8; // border & bg
+$clr-gray-400: #e0e0e0; // border & bg
+$clr-black: #000000;
 
-$clr-text-black: #141e30;
-$clr-text-light: #ececec;
+$clr-primary-native: #3762fb;
+$clr-secondary-native: #a866ff;
+$clr-tertiary-native: #fd8c35;
+$clr-success-native: #3bbf3b;
+$clr-warning-native: #f3b91b;
+$clr-danger-native: #f03838;
 
 // Fonts settings
 $ff-system: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
