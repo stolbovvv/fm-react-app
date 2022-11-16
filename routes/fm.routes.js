@@ -76,9 +76,9 @@ router.get('/getobjectgroupslist', (request, response) => {
     .catch(handleErrorResponse(response));
 });
 
-router.get('getobjectslist', (request, response) => {
+router.get('/getobjectslist', (request, response) => {
   instans
-    .get('getobjectslist', {
+    .get('/getobjectslist', {
       headers: {
         sessionid: request.headers['user-sid'],
       },
