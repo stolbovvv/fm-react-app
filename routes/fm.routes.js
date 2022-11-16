@@ -11,12 +11,21 @@ const instans = axios.create({
 function handleErrorResponse(response) {
   return (err) => {
     if (err.res) {
-      response.status(err.res.status).send(err.res.data).end();
-    } else if (err.req) {
-      response.status(504).send(err.req).end();
+      response.status(err.res.status).send(err.res.data);
     } else {
-      response.status(500).send(err.message).end();
+      response.status(500).send(err.message);
     }
+  };
+}
+
+function handleSuccessResponse(response) {
+  return (res) => {
+    response
+      .status(res.status)
+      .set('access-control-allow-origin', '*')
+      .set('access-control-expose-headers', 'user-sid')
+      .set('user-sid', res.headers.sessionid)
+      .send(res.data);
   };
 }
 
@@ -30,13 +39,7 @@ router.get('/connect', (request, response) => {
         timezone: request.query.timezone,
       },
     })
-    .then((res) => {
-      response
-        .status(res.status)
-        .set({ 'access-control-allow-origin': '*' })
-        .send({ message: res.data, sid: res.headers.sessionid })
-        .end();
-    })
+    .then(handleSuccessResponse(response))
     .catch(handleErrorResponse(response));
 });
 
@@ -47,9 +50,7 @@ router.get('/disconnect', (request, response) => {
         sessionid: request.headers['user-sid'],
       },
     })
-    .then((res) => {
-      response.status(res.status).set({ 'Access-Control-Allow-Origin': '*' }).send({ message: res.data }).end();
-    })
+    .then(handleSuccessResponse(response))
     .catch(handleErrorResponse(response));
 });
 
@@ -60,9 +61,7 @@ router.get('/getcompanieslist', (request, response) => {
         sessionid: request.headers['user-sid'],
       },
     })
-    .then((res) => {
-      response.status(res.status).set({ 'Access-Control-Allow-Origin': '*' }).send(res.data).end();
-    })
+    .then(handleSuccessResponse(response))
     .catch(handleErrorResponse(response));
 });
 
@@ -73,9 +72,7 @@ router.get('/getobjectgroupslist', (request, response) => {
         sessionid: request.headers['user-sid'],
       },
     })
-    .then((res) => {
-      response.status(res.status).set({ 'Access-Control-Allow-Origin': '*' }).send(res.data).end();
-    })
+    .then(handleSuccessResponse(response))
     .catch(handleErrorResponse(response));
 });
 
@@ -86,12 +83,10 @@ router.get('getobjectslist', (request, response) => {
         sessionid: request.headers['user-sid'],
       },
       params: {
-        companyId: request.query,
+        companyId: request.query.companyId,
       },
     })
-    .then((res) => {
-      response.status(res.status).set({ 'Access-Control-Allow-Origin': '*' }).send(res.data).end();
-    })
+    .then(handleSuccessResponse(response))
     .catch(handleErrorResponse(response));
 });
 
