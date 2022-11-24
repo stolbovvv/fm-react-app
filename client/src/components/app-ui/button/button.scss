@@ -1,0 +1,73 @@
+@use '../../../styles/settings' as *;
+
+@mixin button-theme($theme-name, $theme-color-first, $theme-color-second) {
+  &_#{$theme-name} {
+    background: $theme-color-first;
+    color: $theme-color-second;
+
+    &:hover {
+      background: rgba($color: $theme-color-first, $alpha: 0.75);
+    }
+
+    &[data-variant='outline'] {
+      border-color: $theme-color-first;
+      background: rgba($color: $theme-color-first, $alpha: 0);
+      color: $theme-color-first;
+
+      &:hover {
+        background: rgba($color: $theme-color-first, $alpha: 0.125);
+      }
+    }
+  }
+}
+
+.ui-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px 12px 24px;
+  border: 2px solid transparent;
+  border-radius: $border-radius-native;
+  background: $clr-neutral-900;
+  font-size: $fs-native;
+  font-weight: $fw-native;
+  line-height: $lh-native;
+  color: $clr-neutral-100;
+  transition: all 0.25s ease 0s;
+  cursor: pointer;
+
+  > * + * {
+    margin: 0 0 0 12px;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    filter: grayscale(1);
+    pointer-events: none;
+  }
+
+  &:hover {
+    background: rgba($color: $clr-neutral-900, $alpha: 0.75);
+  }
+
+  &[data-variant='outline'] {
+    border-color: $clr-neutral-900;
+    background: rgba($color: $clr-neutral-900, $alpha: 0);
+    color: $clr-neutral-900;
+
+    &:hover {
+      background: rgba($color: $clr-neutral-900, $alpha: 0.25);
+    }
+  }
+
+  &_small {
+    padding: 8px 20px 8px 20px;
+  }
+
+  @include button-theme('primary', $clr-primary-native, $clr-neutral-100);
+  @include button-theme('secondary', $clr-secondary-native, $clr-neutral-100);
+  @include button-theme('info', $clr-information-native, $clr-neutral-100);
+  @include button-theme('warning', $clr-warning-native, $clr-neutral-100);
+  @include button-theme('danger', $clr-danger-native, $clr-neutral-100);
+  @include button-theme('success', $clr-success-native, $clr-neutral-100);
+}
