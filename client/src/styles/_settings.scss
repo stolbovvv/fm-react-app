@@ -9,27 +9,48 @@ $breakpoint-list: (
 );
 
 // Colors setting
-$clr-text-dark: #333333; // default text
-$clr-text-ligth: #757575; // light text
+$clr-neutral-900: #000000;
+$clr-neutral-800: #0e1116;
+$clr-neutral-700: #292e36;
+$clr-neutral-600: #5e6977;
+$clr-neutral-500: #94a3b8;
+$clr-neutral-400: #a9b5c6;
+$clr-neutral-300: #d4dae2;
+$clr-neutral-200: #eaedf1;
+$clr-neutral-100: #ffffff;
 
-$clr-neutral-900: #000000; // border & bg
-$clr-neutral-800: #0e1116; // border & bg
-$clr-neutral-700: #292e36; // border & bg
-$clr-neutral-600: #5e6977; // border & bg
-$clr-neutral-500: #94a3b8; // border & bg
-$clr-neutral-400: #a9b5c6; // border & bg
-$clr-neutral-300: #d4dae2; // border & bg
-$clr-neutral-200: #eaedf1; // border & bg
-$clr-neutral-100: #ffffff; // bg
+$clr-text-dark: #0e1116;
+$clr-text-ligth: #eaedf1;
 
-$clr-primary-native: #3762fb;
-$clr-secondary-native: #a866ff;
-$clr-tertiary-native: #fd8c35;
+$clr-primary-bright: hsl(227, 96%, 65%);
+$clr-primary-native: hsl(227, 96%, 60%);
+$clr-primary-light: hsl(227, 96%, 70%);
+$clr-primary-dark: hsl(227, 96%, 55%);
 
-$clr-information-native: #376fd5;
-$clr-success-native: #188b8a;
-$clr-warning-native: #f1a73b;
-$clr-danger-native: #d64746;
+$clr-secondary-bright: hsl(26, 98%, 65%);
+$clr-secondary-native: hsl(26, 98%, 60%);
+$clr-secondary-light: hsl(26, 98%, 70%);
+$clr-secondary-dark: hsl(26, 98%, 55%);
+
+$clr-success-bright: hsl(179, 71%, 37%);
+$clr-success-native: hsl(179, 71%, 32%);
+$clr-success-light: hsl(179, 71%, 42%);
+$clr-success-dark: hsl(179, 71%, 27%);
+
+$clr-warning-bright: hsl(36, 87%, 64%);
+$clr-warning-native: hsl(36, 87%, 59%);
+$clr-warning-light: hsl(36, 87%, 69%);
+$clr-warning-dark: hsl(36, 87%, 54%);
+
+$clr-danger-bright: hsl(0, 64%, 61%);
+$clr-danger-native: hsl(0, 64%, 56%);
+$clr-danger-light: hsl(0, 64%, 66%);
+$clr-danger-dark: hsl(0, 64%, 51%);
+
+$clr-info-bright: hsl(219, 65%, 58%);
+$clr-info-native: hsl(219, 65%, 53%);
+$clr-info-light: hsl(219, 65%, 63%);
+$clr-info-dark: hsl(219, 65%, 48%);
 
 // Fonts settings
 $ff-system: -apple-system, BlinkMacSystemFont, Arial, sans-serif;
@@ -57,6 +78,8 @@ $lh-headein-100: 120%;
 
 // Deacration settings
 $border-radius-native: 4px;
+$border-radius-button: 4px;
+$border-radius-input: 4px;
 
 $box-shadow-xxl: 0px 32px 64px -12px rgba(0, 0, 0, 0.14);
 $box-shadow-xl: 0px 24px 48px -12px rgba(0, 0, 0, 0.18);

@@ -1,4 +1,73 @@
 @use '../../../styles/settings' as *;
 
 .ui-input {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+
+  & > * + * {
+    margin: 2px 0 0 0;
+  }
+
+  &__label {
+    font-size: $fs-native-sm;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 0 0 0.75em;
+    outline: 4px solid transparent;
+    border: 2px solid $clr-neutral-600;
+    border-radius: $border-radius-input;
+    background: rgba($color: $clr-neutral-100, $alpha: 0.25);
+    transition: all 0.25s ease 0s;
+    font-size: $fs-native;
+    font-weight: $fw-native;
+    color: $clr-text-dark;
+
+    &:focus-within,
+    &:focus-visible {
+      background: rgba($color: $clr-neutral-100, $alpha: 0.875);
+      outline-color: rgba($color: $clr-neutral-700, $alpha: 0.5);
+    }
+  }
+
+  &__icon-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.75em 0.75em 0.75em 0.75em;
+    border: none;
+    outline: none;
+    background: transparent;
+
+    &::placeholder {
+      color: $clr-neutral-700;
+    }
+  }
+
+  &__error {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    > * + * {
+      margin: 0 0 0 0.5em;
+    }
+  }
+
+  &__error-icon {
+    color: $clr-danger-native;
+  }
+
+  &__error-message {
+    font-size: $fs-native-sm;
+    color: $clr-danger-native;
+  }
 }

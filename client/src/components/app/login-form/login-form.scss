@@ -1,0 +1,31 @@
+@use '../../../styles/settings' as *;
+
+.form-login {
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 340px;
+
+  &__title {
+    font-size: $fs-heading-xl;
+    font-weight: $fw-headin;
+    line-height: $lh-headein-100;
+    text-align: center;
+  }
+
+  &__filedset {
+    margin: 32px 0 0 0;
+    border: none;
+
+    > * + * {
+      margin: 16px 0 0 0;
+    }
+  }
+  &__legend {
+    text-align: center;
+  }
+  &__button {
+    margin: 20px 0 0 0;
+  }
+}

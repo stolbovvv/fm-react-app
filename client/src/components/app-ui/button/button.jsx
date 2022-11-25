@@ -1,17 +1,17 @@
 import './button.scss';
 import PropTypes from 'prop-types';
 
-function Button({ className, size, theme, variant, type, onClick, children, disabled }) {
-  const classList = className ? `${className} ` : '';
-  const classBase = 'ui-button';
-  const classSize = size ? ` ${classBase}_${size}` : '';
-  const classTheme = theme ? ` ${classBase}_${theme}` : '';
+function Button({ className, size, theme, view, type, onClick, children, disabled }) {
+  const classBase = view ? `ui-button-${view}` : 'ui-button';
+  const classSize = size ? ` ${classBase}_size-${size}` : '';
+  const classTheme = theme ? ` ${classBase}_theme-${theme}` : '';
+  const classNested = className ? `${className} ` : '';
 
   return (
     <button
-      className={classList + classBase + classTheme + classSize}
+      className={classNested + classBase + classTheme + classSize}
       type={type}
-      data-variant={variant}
+      data-variant={view}
       onClick={onClick}
       disabled={disabled}>
       {children}
@@ -21,12 +21,12 @@ function Button({ className, size, theme, variant, type, onClick, children, disa
 
 Button.propTypes = {
   type: PropTypes.string,
+  view: PropTypes.string,
+  size: PropTypes.string,
   theme: PropTypes.string,
   onClick: PropTypes.func.isRequired,
   disabled: PropTypes.bool,
   className: PropTypes.string,
-  classSize: PropTypes.string,
-  calssVariant: PropTypes.string,
 };
 
 Button.defaultProps = {

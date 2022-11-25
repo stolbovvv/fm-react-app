@@ -1,1 +1,52 @@
 @use '../../../styles/settings' as *;
+
+.login {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 8px;
+  width: 600px;
+  min-height: 100%;
+  margin: 10px 10px 10px 10px;
+  padding: 32px 28px 32px 28px;
+  background: #141e30;
+  background: linear-gradient(to bottom, #243b55 50%, #141e30 150%);
+  color: $clr-text-ligth;
+  box-shadow: $box-shadow-md;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    > * + * {
+      margin: 0 0 0 0.375em;
+    }
+  }
+
+  &__header-title {
+    color: $clr-neutral-300;
+    font-size: $fs-heading-sm;
+  }
+
+  &__form {
+    margin: auto 0 auto 0;
+    padding: 32px 0 32px 0;
+
+    * {
+      &:focus-within,
+      &:focus-visible {
+        outline-color: rgba($color: $clr-neutral-200, $alpha: 0.24);
+      }
+    }
+  }
+
+  &__footer {
+    margin: auto 0 0 0;
+    align-self: stretch;
+    color: $clr-neutral-400;
+  }
+
+  &__footer-copy {
+    font-size: $fs-native;
+  }
+}
