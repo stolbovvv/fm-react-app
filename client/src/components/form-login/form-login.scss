@@ -1,0 +1,56 @@
+@use '../../styles/settings' as *;
+
+.form-login {
+  padding: 24px 0 0 0;
+
+  > * + * {
+    margin: 16px 0 0 0;
+  }
+
+  &__fieldset {
+    border: none;
+
+    > * + * {
+      margin: 16px 0 0 0;
+    }
+  }
+  &__legend {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+  &__input-wrapper {
+    display: flex;
+    padding: 8px 8px 8px 8px;
+    border-radius: 6px;
+    background: $clr-neutral-200;
+
+    &:focus-within {
+      outline: 3px solid rgba($color: $clr-primary-native, $alpha: 0.75);
+    }
+
+    > * + * {
+      margin: 0 0 0 8px;
+    }
+
+    > svg {
+      flex: 0 0 auto;
+    }
+
+    > input {
+      flex: 1 1 auto;
+      border: none;
+      background: none;
+
+      &:focus-visible {
+        outline: none;
+      }
+    }
+  }
+
+  &__button {
+    width: 100%;
+    padding: 8px 8px 8px 8px;
+    border: none;
+    border-radius: 6px;
+  }
+}

@@ -1,0 +1,85 @@
+@use '../../styles/settings' as *;
+
+.app-login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+
+  &__body {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    width: 768px;
+    height: 485px;
+    border-radius: 8px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    background: $clr-neutral-100;
+    padding: 8px;
+
+    > * + * {
+      margin: 0 0 0 8px;
+    }
+  }
+
+  &__coll {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+
+    &_w45p {
+      flex: 0 0 calc(45% - 4px);
+    }
+
+    &_w55p {
+      flex: 0 0 calc(55% - 4px);
+    }
+  }
+
+  &__info {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background-image: url('../../assets/bg/bg-info.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+  }
+
+  &__header {
+    padding: 8px 8px 0 8px;
+  }
+
+  &__logo {
+    height: 32px;
+  }
+
+  &__main {
+    flex: 1 1 auto;
+    margin: 64px 0 0 0;
+    padding: 0 8px 0 8px;
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 700;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 8px 0 8px;
+
+    > * + * {
+      margin: 0 0 0 8px;
+    }
+  }
+
+  &__copyright,
+  &__developer {
+    font-size: 12px;
+    opacity: 0.75;
+  }
+}
